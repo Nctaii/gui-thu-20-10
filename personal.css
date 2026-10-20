@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Noto Serif";
+  src: url("./assets/fonts/noto-serif-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("./assets/fonts/noto-serif-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./assets/fonts/noto-sans-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  --paper: #fffdf9;
+  --ink: #73384e;
+  --rose: #b95778;
+  font-family: "Noto Sans", sans-serif;
+}
+body {
+  background:
+    radial-gradient(ellipse at 15% 18%, #f9e4ed88, transparent 45%),
+    radial-gradient(ellipse at 86% 78%, #eddfe788, transparent 45%),
+    #fff9f5;
+}
+h1, h2, .letter-recipient, .letter-signature, .portrait-dedication {
+  font-family: "Noto Serif", Georgia, serif;
+}
+h1 { line-height: 1.22; letter-spacing: -1.1px; }
+.occasion { letter-spacing: .06em; }
+.occasion span {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #f6e2e9;
+  border-radius: 20px;
+}
+.greeting-caption { line-height: 1.7; }
+.garden-link { box-shadow: 0 4px 18px #76364d08; }
+.letter-date, .letter-flower, .letter-fold { display: none; }
+.letter-actions { flex-wrap: wrap; gap: 12px; }
+#shareResult { margin-top: 20px; }
+#shareLink {
+  display: block; width: 100%; min-width: 0; margin-top: 8px;
+  padding: 10px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--paper); color: var(--ink); font-size: 12px;
+}
+@media (max-width: 480px) {
+  .greeting-caption { max-width: 280px; margin-inline: auto; font-size: 12px; }
+  .occasion { font-size: 11px; }
+}

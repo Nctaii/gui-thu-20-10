@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8fa">
+  <meta name="description" content="Một bó hoa và tấm thiệp nhỏ, gửi những lời chúc dịu dàng nhân ngày Phụ nữ Việt Nam 20/10.">
+  <title>Gửi em Thư · 20/10</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./personal.css">
+  <script src="./script.js" defer></script>
+  <script src="./greeting-link.js" defer></script>
+  <script src="./card.js" defer></script>
+
+</head>
+<body>
+  <main>
+    <canvas id="ambientPetalsCanvas" aria-hidden="true"></canvas>
+    <header class="greeting">
+      <p class="occasion">Ngày Phụ nữ Việt Nam <span>20/10</span></p>
+      <h1>Nhân dịp 20/10,<br>Tặng em Thư một bó hoa</h1>
+      <p class="greeting-caption">Chúc em một ngày thật vui nhé.</p>
+    </header>
+
+    <div class="gift-layout">
+      <section class="scene-column" aria-label="Hoa và những lời chúc 20/10">
+
+
+        <div class="gift-visuals">
+          <div class="bouquet-composition">
+            <div id="bouquetStageWrapper" role="button" tabindex="0"
+              aria-label="Bó hoa hồng. Nhấn Enter để nhận lời chúc; dùng phím mũi tên để chọn bông hoa."
+              aria-describedby="bouquetHint">
+              <canvas id="bouquetCanvas" aria-hidden="true"></canvas>
+            </div>
+            <button class="envelope-button" id="openCard" type="button" aria-haspopup="dialog" aria-controls="greetingCard" aria-expanded="false" hidden>
+              <span class="envelope" aria-hidden="true"><span class="envelope-letter">Gửi em</span><span class="envelope-seal">♡</span></span>
+              <span class="envelope-caption">Có một tấm thiệp gửi em</span>
+              <span class="envelope-action">Mở thiệp</span>
+            </button>
+          </div>
+
+        </div>
+
+        <footer class="scene-footer">
+          <p id="bouquetHint" class="bouquet-hint">Chạm một bông hoa để nhận lời chúc</p>
+          <p id="roseWish" class="rose-wish" role="status" aria-live="polite" aria-atomic="true"></p>
+          <button class="text-button" id="replayBloom" type="button">Cho hoa nở lại <span aria-hidden="true">↻</span></button>
+        </footer>
+      </section>
+
+      <dialog id="greetingCard" class="card-dialog" aria-labelledby="cardTitle">
+        <div class="letter-paper">
+          <button class="close-button" id="closeCard" type="button" aria-label="Đóng thiệp">×</button>
+          <div id="cardReading">
+            <div class="letter-date" aria-label="Ngày 20 tháng 10"><span>20</span><span class="date-stem" aria-hidden="true"></span><span>10</span></div>
+            <p class="letter-recipient">Gửi <span id="cardRecipient">bạn</span>,</p>
+            <h2 id="cardTitle">20/10 vui vẻ nhé!</h2>
+            <div class="letter-flower" aria-hidden="true">❀</div>
+            <p id="cardMessage" class="letter-message"></p>
+            <div class="letter-signoff"><p>Gửi em,</p><p id="cardSender" class="letter-signature"></p></div>
+            <div class="letter-fold" aria-hidden="true"></div>
+            <div class="letter-actions"><button id="editCard" class="text-button" type="button">Sửa lời chúc <span aria-hidden="true">✎</span></button><button id="shareCard" class="primary-button" type="button">Sao chép liên kết</button></div>
+          </div>
+          <form id="cardEditor" hidden>
+            <p class="editor-intro">Viết vài lời bạn muốn gửi.</p>
+            <h2 id="editorTitle" class="editor-title">Lời chúc của bạn</h2>
+            <label for="recipientInput">Gửi đến</label>
+            <input id="recipientInput" name="recipient" maxlength="60" required autocomplete="off">
+            <label for="messageInput">Lời chúc 20/10</label>
+            <textarea id="messageInput" name="message" rows="7" maxlength="1500" required></textarea>
+            <label for="senderInput">Người gửi</label>
+            <input id="senderInput" name="sender" maxlength="60" required autocomplete="off">
+            <p class="editor-hint">Lời chúc được giữ trong liên kết, người nhận mở ra sẽ đọc được.</p>
+            <div class="editor-actions"><button class="primary-button" type="submit">Xong</button><button class="text-button" id="cancelEdit" type="button">Hủy</button></div>
+          </form>
+          <div id="shareResult" hidden><label for="shareLink">Liên kết của thiệp</label><input id="shareLink" readonly type="text"><p id="shareHint" class="editor-hint"></p></div>
+          <p id="cardStatus" class="card-status" role="status" aria-live="polite"></p>
+        </div>
+      </dialog>
+    </div>
+    <noscript><p class="noscript-message">Bật JavaScript để ngắm hoa nở và mở thiệp 20/10 nhé.</p></noscript>
+  </main>
+</body>
+</html>
